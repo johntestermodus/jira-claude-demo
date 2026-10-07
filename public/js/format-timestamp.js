@@ -1,6 +1,13 @@
 function formatTimestamp(isoString) {
-  // Currently shows raw UTC — this is the bug the Jira ticket will ask to fix
-  return isoString;
+  const date = new Date(isoString);
+  return new Intl.DateTimeFormat(undefined, {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+  }).format(date);
 }
 
 // Export for testing if running in Node
