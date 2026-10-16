@@ -25,6 +25,7 @@
         <tr>
           <th>ID</th>
           <th>Customer</th>
+          <th>Currency</th>
           <th>Total</th>
           <th>Placed On</th>
         </tr>
@@ -48,6 +49,7 @@
         row.innerHTML = `
           <td>#${order.id}</td>
           <td>${order.customer}</td>
+          <td>${order.currency}</td>
           <td class="total">$${order.total.toFixed(2)}</td>
           <td class="timestamp">${formattedTime}</td>
         `;
